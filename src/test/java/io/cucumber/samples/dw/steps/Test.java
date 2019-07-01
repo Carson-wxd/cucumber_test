@@ -20,7 +20,7 @@ private static WebDriver driver = null;
 	private static BaiduModel bai = new BaiduModel();
 
     public void initBrowserAndOpenIt() throws Exception {
-    	System.setProperty("webdriver.gecko.driver", "C:\\automation_mozila_jar\\geckodriver.exe");
+    	System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
         driver = new FirefoxDriver();
         driver.get(bai.getUrl());
         Thread.sleep(3000);

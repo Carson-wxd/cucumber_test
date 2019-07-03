@@ -15,7 +15,7 @@ import io.cucumber.samples.pagemodel.BaiduModel;
 
 public class Test {
 
-private static WebDriver driver = null;
+	private static WebDriver driver = null;
 	
 	private static BaiduModel bai = new BaiduModel();
 

@@ -1,16 +1,8 @@
 package io.cucumber.samples.dw;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Test;
-
-import net.masterthought.cucumber.Configuration;
-import net.masterthought.cucumber.ReportBuilder;
-import net.masterthought.cucumber.presentation.PresentationMode;
-import net.masterthought.cucumber.sorting.SortingMethod;
 
 public class HelloCucumberTest {
 

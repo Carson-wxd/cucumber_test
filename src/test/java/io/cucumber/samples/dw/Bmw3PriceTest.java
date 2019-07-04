@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"classpath:features/search_bmw_3_gt.feature"}
+@CucumberOptions(plugin = {"json:target/json-report/bmw.json","pretty","html:target/html-report/"}, features = {"classpath:features/search_bmw_3_gt.feature"}
 , glue = {"io.cucumber.samples.dw.steps"}
 , tags = "@BMW3GT"
 )

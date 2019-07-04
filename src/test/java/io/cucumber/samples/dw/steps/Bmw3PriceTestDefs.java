@@ -11,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.Given;
@@ -77,10 +76,10 @@ public class Bmw3PriceTestDefs {
 
 	@Then("^查看是否跳转到宝马中国页面$")
 	public void checkBmwChina() throws Throwable {
-		WebDriverWait wait = new WebDriverWait(driver,10);
-		WebElement web = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(bmwMainPage.getBigCustomerBusi())));
-		if(web.isDisplayed() == true){
-			System.out.println("has changed bmw china");
+		waitForElementToLoad(driver,10,By.xpath(bmwMainPage.getBigCustomerBusi()));
+		Boolean isBmwMain = driver.findElement(By.xpath(bmwMainPage.getBigCustomerBusi())).isDisplayed();
+		if(isBmwMain){
+			System.out.println("this is bmw china main page");
 		}
 	}
 
@@ -91,7 +90,6 @@ public class Bmw3PriceTestDefs {
 				@Override
 				public Boolean apply(WebDriver driver) {
 					WebElement element = driver.findElement(by);
-					System.out.println(element.isDisplayed()+"sssssssssssssss");
 					return element.isDisplayed();
 				}
 			});

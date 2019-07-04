@@ -72,12 +72,13 @@ public class Bmw3PriceTestDefs {
 	public void clickBmwChina() throws Throwable {
 		String navigateUrl = driver.findElement(By.xpath(bmwBaidu.getBmw_china())).getAttribute("href");
 		driver.navigate().to(navigateUrl);
+		Thread.sleep(3000);
 	}
 
 	@Then("^查看是否跳转到宝马中国页面$")
 	public void checkBmwChina() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver,10);
-		WebElement web = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(bmwMainPage.getBigCustomerBusi())));
+		WebElement web = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(bmwMainPage.getBigCustomerBusi())));
 		if(web.isDisplayed() == true){
 			System.out.println("has changed bmw china");
 		}
@@ -122,11 +123,13 @@ public class Bmw3PriceTestDefs {
 	@When("^点击新(\\d+)款BMW(\\d+)系GT$")
 	public void clickBmw3Gt(int arg1, int arg2) throws Throwable {
 	    driver.findElement(By.xpath(bmwMainPage.getBmw3GtUrl())).click();
+	    Thread.sleep(2000);
 	}
 
 	@When("^点击了解详情$")
 	public void 点击了解详情() throws Throwable {
 		 driver.findElement(By.xpath(bmwMainPage.getBmw3GtDetail())).click();
+		 Thread.sleep(3000);
 	}
 
 	@When("^滑动滚动条到金融重购绿色通道位置$")
